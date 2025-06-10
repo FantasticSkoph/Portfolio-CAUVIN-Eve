@@ -323,5 +323,9 @@ html{
         overflow: hidden;
         background:rgba(10, 10, 10, 0.7);
         backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        transition: max-height 0.3s ease;
+        z-index: 1000;
     }
 }
