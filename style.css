@@ -299,9 +299,9 @@ html{
     display:none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px
-    padding:10px;
-    z-index:1001
+    gap: 5px;
+    padding: 10px;
+    z-index: 1001;
 }
 .menu-icon span{
     width:25px;
@@ -328,4 +328,12 @@ html{
         transition: max-height 0.3s ease;
         z-index: 1000;
     }
+}
+.menu-toggle:checked + .menu-icon + .nav-links{
+    max-height: 100vh;
+    max-height: 30dvh;
+    overflow: auto;
+    padding: 0.5rem 0;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(15px);
 }
