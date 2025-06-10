@@ -6,23 +6,43 @@
     <meta name="description" content="Mon portfolio personnel.">
     <meta name="keywords" content="portfolio, web dev, web, dev, developpeur, cauvin, eve, Eve CAUVIN">
     <meta name="author" content="Eve CAUVIN">
+    <meta name="copyright" content="Eve CAUVIN">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="images/Logo Skoph - Blanc.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Portfolio - CAUVIN Eve</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<header>
-    <nav>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
 <body>
-    <p>Bonjour :)</p>
+<header>
+    <div class="bg-animation">
+    <img src="images/Logo Skoph - Blanc.png" alt="Logo de Skoph" class="logo">
+        <span class="navicon"></span>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/Logo Skoph - Blanc.png" alt="Logo de Skoph" class="logo">
+                    <span class="logo-text">Mon Portfolio</span>
+                </a>
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                    <label for="menu-toggle" class="menu-icon" aria-label="Ouvrir le menu de navigation" role="Ouvrir le menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                <ul class="nav-links">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#realisations">Mes réalisations</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <h1>Bienvenue sur mon Portfolio :)</h1>
+</header>
+<p>"Wouah, mais c'est de la merde!" - Utilisateur anonyme</p>
 </body>
 </html>
