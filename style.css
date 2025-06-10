@@ -1,327 +1,212 @@
-/* CSS générale de la page */
- 
-* {
+/* CSS général de la page */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* CSS général de la page */
  
-/* CSS générale de la page */
- 
-body {
+body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Police de caractères */
     line-height: 1.6;
-    /* Hauteur de ligne */
-    font-size: 16px;
-    /* Taille de police */
     color: #fff;
-    /* Couleur du texte */
     background: #0a0a0a;
-    /* Couleur de fond */
     overflow-x: hidden;
-    /* Empêche le défilement horizontal */
 }
  
-/* STYLE LIEN */
-a {
+a{
     color: #00ffff;
-    /* Couleur des liens */
-    text-decoration: none;
-    /* Pas de soulignement par défaut */
     text-decoration: underline;
-    /* Soulignement par défaut */
     transition: color 0.3s ease;
-    /* Transition pour la couleur des liens */
 }
  
 a:hover,
-a:focus {
+a:focus{
     color: #ff00ff;
-    /* Couleur des liens au survol et au focus */
+    text-decoration: underline;
 }
  
-a:focus {
+a:focus{
     outline: 2px dashed #00ffff;
-    /* Style de focus pour l'accessibilité */
     outline-offset: 4px;
-    /* Décalage de l'outline */
 }
  
-.bg-animation {
+.bg-animation{
     position: fixed;
-    /* Positionnement fixe pour l'arrière-plan animé */
     top: 0;
-    /* Positionné en haut de la page */
     left: 0;
-    /* Positionné à gauche de la page */
-    height: 100%;
-    /* Hauteur de l'arrière-plan */
     width: 100%;
-    /* Largeur de l'arrière-plan */
+    height: 100%;
     z-index: -1;
-    /* Z-index négatif pour être derrière le contenu */
     background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
-    /* Dégradé de couleurs */
-    /* Dégradé de couleurs */
     background: 400% 400%;
-    /* Positionnement du dégradé */
     animation: gradientShift 15s ease infinite;
-    /* Dégradé animé */
-    /* Animation du dégradé */
 }
  
-.bg-animation::before {
+.bg-animation::before{
     content: '';
-    /* Pseudo-élément pour le motif de grille */
     position: absolute;
-    /* Positionnement absolu pour couvrir l'arrière-plan */
     top: 0;
-    /* Positionné en haut */
     left: 0;
-    /* Positionné à gauche */
     width: 100%;
-    /* Largeur de l'élément */
     height: 100%;
-    /* Hauteur de l'élément */
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    /* Motif de grille SVG */
     animation: gridMove 20s linear infinite;
-    /* Animation du motif de grille */
-    /* Animation du motif de grille */
 }
  
-@keyframes gradientShift {
-    /* Animation pour le dégradé de fond */
- 
-    0%,
-    100% {
-        background-position: 0% 50%;
-        /* Positionnement initial du dégradé */
-    }
- 
-    50% {
-        background-position: 100% 50%;
-        /* Positionnement du dégradé à mi-chemin */
-    }
+@keyframes gradientShift{
+    0%, 100% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
 }
  
-@keyframes gridMove {
-    0% {
-        transform: translate(0, 0);
-        /* Position initiale du motif de grille */
-    }
- 
-    100% {
-        transform: translate(10px, 10px)
-            /* Déplacement du motif de grille */
-    }
+@keyframes gridMove{
+    0% { transform: translate(0, 0);}
+    100% { transform: translate(10px, 10px);}
 }
  
-/* CSS pour la barre de navigation */
-nav,
-.nav {
+/* CSS pour la barre de navigation de la page */
+nav, .navbar{
     position: fixed;
     top: 0;
-    /* Positionnement fixe en haut de la page */
     width: 100%;
-    /* Largeur de la barre de navigation */
     background: rgba(10, 10, 10, 0.9);
-    /* Couleur de fond semi-transparente */
     backdrop-filter: blur(10px);
-    /* Flou pour l'arrière-plan */
     z-index: 1000;
-    /* Z-index pour superposer la barre de navigation */
     padding: 1rem 0;
-    /* Espacement vertical */
     transition: all 0.3s ease;
-    /* Transition pour les effets de survol */
 }
  
-.nav-container {
+.nav-container{
     max-width: 1200px;
-    /* Largeur maximale du conteneur */
     margin: 0 auto;
-    /* Centrage du contenu */
     padding: 0 2rem;
-    /* Espacement horizontal */
     display: flex;
-    /* Flexbox pour la mise en page */
     justify-content: space-between;
-    /* Espace entre les éléments */
     align-items: center;
-    /* Alignement des éléments */
 }
  
-.logo,
-.logo-text {
+.logo, .logo-text{
     font-size: 1.8rem;
-    /* Taille de la police pour le logo */
     font-weight: bold;
-    /* Gras pour le logo */
     background: linear-gradient(45deg, #00ffff, #ff00ff);
-    /* Dégradé pour le logo */
     -webkit-background-clip: text;
-    /* Clip du fond pour le texte */
     -webkit-text-fill-color: transparent;
-    /* Remplissage transparent pour le texte */
     background-clip: text;
-    /* Clip du fond pour le texte */
 }
  
-.logo-links {
+.logo-link{
     display: flex;
-    /* Flexbox pour les liens du logo */
     align-items: center;
-    /* Alignement des éléments */
     gap: 10px;
-    /* Espace entre les liens */
     animation: logoPulse 3s infinite ease-in-out;
-    /* Animation de pulsation pour les liens du logo */
     transition: transform 0.3s ease;
-    /* Transition pour les effets de survol */
 }
  
-.logo-link:hover {
+.logo-link:hover{
     transform: scale(1.05);
-    /* Effet de zoom au survol */
 }
  
-.logo-img {
-    width: 30px;
-    /* Largeur de l'image du logo */
-    height: 40px;
-    /* Hauteur de l'image du logo */
+.logo-img{
+    width: 40px;
+    height: 50px;
     border-radius: 50%;
-    /* Bordure arrondie pour l'image du logo */
     animation: logoSpin 20s linear infinite;
-    /* Animation de rotation pour l'image du logo */
     filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.6));
-    /* Ombre portée pour l'image du logo */
 }
  
-@keyframes logoPulse {
- 
-    0%,
-    100% {
-        opacity: 1;
-    }
- 
-    50% {
-        opacity: 0.8;
-    }
+@keyframes logoPulse{
+    0%, 100%{ opacity: 1;}
+    50% { opacity: 0.8;}
 }
  
-@keyframes logoSpin {
-    0% {
-        transform: rotate(0deg);
-        /* Position initiale de rotation */
-    }
- 
-    100% {
-        transform: rotate(360deg);
-        /* Rotation complète de 360 degrés */
-    }
+@keyframes logoSpin{
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
  
-.nav-links {
+.nav-links{
     display: flex;
-    /* Flexbox pour les liens de navigation */
     list-style: none;
-    /* Pas de puces pour la liste */
     gap: 2rem;
-    /* Espace entre les liens */
-    flex-direction: raw;
-    /* Direction des liens */
+    flex-direction: row;
 }
  
-.nav-links a {
+.nav-links a{
     color: #fff;
-    /* Couleur des liens de navigation */
     text-decoration: none;
-    /* Pas de soulignement par défaut */
     transition: all 0.3s ease;
-    /* Transition pour les effets de survol */
     position: relative;
-    /* Positionnement relatif pour les effets de survol */
-    padding: 0.5rem 1rem
-        /* Espacement vertical pour les liens */
+    padding: 0.5rem 1rem;
 }
  
-.nav-links a::before {
+.nav-links a::before{
     content: '';
-    /* Pseudo-élément pour l'effet de survol */
     position: absolute;
-    /* Positionnement absolu pour l'effet de survol */
     bottom: 0;
-    /* Positionné en bas du lien */
     left: 0;
-    /* Positionné à gauche du lien */
     width: 0;
-    /* Largeur initiale de l'effet de survol */
     height: 2px;
-    /* Hauteur de l'effet de survol */
-    background: linear-gradient(45deg,
-            #00ffff,
-            #ff00ff);
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
     transition: width 0.3s ease;
-    /* Transition pour l'effet de survol */
 }
  
-.nav-links a:hover::before {
+.nav-links a:hover::before{
     width: 100%;
-    /* Largeur complète de l'effet de survol au survol */
 }
  
-.nav-links a:hover {
+.nav-links a:hover{
     transform: translateY(-2px);
-    /* Effet de translation vers le haut au survol */
     color: #00ffff;
-    /* Couleur des liens au survol */
 }
+ 
 /* CSS pour le menu burger */
 .menu-toggle, .menu-icon{
     display: none;
     flex-direction: column;
-    cursor:pointer;
+    cursor: pointer;
 }
+ 
 .menu-toggle span, .menu-icon span{
-    width:25px;
-    height:3px;
+    width: 25px;
+    height: 3px;
     background: #00ffff;
-    margin:3px 0;
+    margin: 3px 0;
     transition: 0.3s;
 }
+ 
 html{
     scroll-behavior: smooth;
 }
+ 
 .menu-icon{
-    display:none;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
     padding: 10px;
     z-index: 1001;
 }
+ 
 .menu-icon span{
-    width:25px;
-    height:3px;
-    background-color: #00ffff;
+    width: 25px;
+    height: 3px;
+    background: #00ffff;
     transition: 0.3s;
 }
+ 
 /* CSS de la barre de navigation en mode mobile */
 @media (max-width: 768px){
     .menu-icon{
-        display:flex;
+        display: flex;
     }
     .nav-links{
-        position:fixed;
-        top:70px;
-        left:0;
-        width:100%;
-        max-height:0;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        max-height: 0;
         overflow: hidden;
-        background:rgba(10, 10, 10, 0.7);
+        background: rgba(10, 10, 10, 0.7);
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
@@ -329,6 +214,7 @@ html{
         z-index: 1000;
     }
 }
+ 
 .menu-toggle:checked + .menu-icon + .nav-links{
     max-height: 100vh;
     max-height: 30dvh;
@@ -336,14 +222,27 @@ html{
     padding: 0.5rem 0;
     background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(15px);
-    z-index:1000;
+    z-index: 1000;
 }
+ 
 .menu-toggle:checked + .menu-icon span:nth-child(1){
     transform: rotate(45deg) translate(5px, 5px);
 }
+ 
 .menu-toggle:checked + .menu-icon span:nth-child(2){
-    opacity:0;
+    opacity: 0;
 }
+ 
 .menu-toggle:checked + .menu-icon span:nth-child(3){
-    transform:rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
+/* CSS pour la bannière de la page */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+    position:relative;
+}
+/* CSS pour la bannière de la page */
