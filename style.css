@@ -245,4 +245,17 @@ html{
     text-align: center;
     position:relative;
 }
+.hero-content{
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+.hero h1{
+    font-size:4rem;
+    margin-bottom:1rem;
+    background:linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 3s ease-in-out infinite;   
+}
 /* CSS pour la bannière de la page */
