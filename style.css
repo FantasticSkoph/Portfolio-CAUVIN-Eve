@@ -279,3 +279,49 @@ nav,
     color: #00ffff;
     /* Couleur des liens au survol */
 }
+/* CSS pour le menu burger */
+.menu-toggle, .menu-icon{
+    display: none;
+    flex-direction: column;
+    cursor:pointer;
+}
+.menu-toggle span, .menu-icon span{
+    width:25px;
+    height:3px;
+    background: #00ffff;
+    margin:3px 0;
+    transition: 0.3s;
+}
+html{
+    scroll-behavior: smooth;
+}
+.menu-icon{
+    display:none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px
+    padding:10px;
+    z-index:1001
+}
+.menu-icon span{
+    width:25px;
+    height:3px;
+    background-color: #00ffff;
+    transition: 0.3s;
+}
+/* CSS de la barre de navigation en mode mobile */
+@media (max-width: 768px){
+    .menu-icon{
+        display:flex;
+    }
+    .nav-links{
+        position:fixed;
+        top:70px;
+        left:0;
+        width:100%;
+        max-height:0;
+        overflow: hidden;
+        background:rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(20px);
+    }
+}
